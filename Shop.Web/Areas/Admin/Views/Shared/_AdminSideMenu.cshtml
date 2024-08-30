@@ -1,0 +1,44 @@
+﻿<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a asp-area="admin" asp-controller="User" asp-action="FilterUser" class="nav-link active" aria-current="page">
+                    <span data-feather="home"></span>
+                    مدریت کاربران
+                </a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="admin" asp-controller="User" asp-action="FilterRoles" class="nav-link active" aria-current="page">
+                    <span data-feather="home"></span>
+                    مدریت نقش ها
+                </a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="admin" asp-controller="Product" asp-action="FilterProducts" class="nav-link active" aria-current="page">
+                    <span data-feather="home"></span>
+                    مدریت محصول
+                </a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="admin" asp-controller="Product" asp-action="FilterProductCategories" class="nav-link active" aria-current="page">
+                    <span data-feather="home"></span>
+                    مدریت دسته بندی ها
+                </a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="admin" asp-controller="Site" asp-action="FilterSlider" class="nav-link active" aria-current="page">
+                    <span data-feather="home"></span>
+                    مدریت اسلایدر ها
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a asp-area="admin" asp-controller="Order" asp-action="FilterOrders" class="nav-link active" aria-current="page">
+                    <span data-feather="home"></span>
+                    مدریت سفارش ها
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

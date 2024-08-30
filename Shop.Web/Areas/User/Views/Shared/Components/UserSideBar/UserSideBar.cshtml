@@ -1,0 +1,31 @@
+﻿@model User
+@using Shop.Application.Utils
+
+<form>
+    <div class="box-shadow info-image-user mb-3">
+        <div class="p-3">
+            <img class="img-thumbnail  box-shadow img-account" src="@(PathExtensions.UserAvatarOrgin +Model.Avatar)">
+        </div>
+        <div class="text-center p-1">
+            <p class="text-center">@Model.GetUserName()</p>
+        </div>
+
+    </div>
+</form>
+
+<section class="box-shadow">
+    <header>
+        <h3> میز کار </h3>
+    </header>
+    <div class="inner">
+        <ul>
+            <li><a asp-area="user" asp-controller="Home" asp-action="Index"> مشاهده حساب کاربری </a></li>
+            <li><a asp-area="user" asp-controller="Account" asp-action="EditUserProfile"> ویرایش حساب کاربری </a></li>
+            <li><a asp-area="user" asp-controller="Account" asp-action="ChangePassword"> تغییر رمز عبور </a></li>
+            <li><a asp-area="user" asp-controller="Account" asp-action="ChargeWallet"> کیف پول </a></li>
+            <li><a asp-area="user" asp-controller="Account" asp-action="UserWallet"> تراکنش ها </a></li>
+            <li><a asp-area="user" asp-controller="Account" asp-action="UserOrders">لیست سفارشات</a></li>
+            <li><a asp-controller="Account" asp-action="LogOut"> خروج از حساب کاربری </a></li>
+        </ul>
+    </div>
+</section>

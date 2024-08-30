@@ -1,0 +1,49 @@
+﻿@model List<Shop.Domain.ViewModels.Site.Products.ProductItemViewModel>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var product in Model)
+    {
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="product product-2">
+                <figure class="product-media">
+                    <span class="product-label label-circle label-sale">جدید</span>
+                    <a asp-area="" asp-controller="Product" asp-action="ProductDetail" asp-route-productId="@product.ProductId">
+                        <img src="@(PathExtensions.ProductOrgin +product.ProductImageName)" alt="@product.ProductName"
+                             class="product-image" title="@product.ProductName">
+                    </a>
+
+                    <div class="product-action-vertical">
+                        <a asp-area="User" asp-controller="Account" asp-action="AddUserFavorite" asp-route-productId="@product.ProductId" class="btn-product-icon btn-wishlist"
+                           title="افزودن به لیست علاقه مندی"></a>
+                    </div><!-- End .product-action -->
+
+                    <div class="product-action">
+                        <a asp-area="" asp-controller="Product" asp-action="BuyProduct" asp-route-productId="@product.ProductId" class="btn-product btn-cart" title="افزودن به سبد خرید">
+                            <span>
+                                افزودن
+                                به
+                                سبد خرید
+                            </span>
+                        </a>
+                    </div>
+                </figure>
+
+                <div class="product-body">
+                    <div class="product-cat">
+                        <a asp-area="" asp-controller="Product" asp-action="Products" asp-route-FilterByCategory="@product.ProductCategory.UrlName">@product.ProductCategory.Title</a>
+                    </div><!-- End .product-cat -->
+                    <h3 class="product-title"><a asp-area="" asp-controller="Product" asp-action="ProductDetail" asp-route-productId="@product.ProductId">@product.ProductName</a></h3>
+                    <!-- End .product-title -->
+                    <div class="product-price">
+                        <span class="new-price">@product.Price.ToString("#,0 تومان")</span>
+                    </div><!-- End .product-price -->
+
+                    <span class="ratings-text">( @product.CommentCount )</span>
+                </div><!-- End .rating-container -->
+
+
+            </div><!-- End .product-body -->
+        </div>
+    }
+}

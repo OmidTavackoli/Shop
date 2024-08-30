@@ -1,0 +1,9 @@
+﻿@model List<Shop.Domain.ViewModels.Site.Products.ProductItemViewModel>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var product in Model)
+    {
+        <partial name="_ProductBox" model="product" />
+    }
+}

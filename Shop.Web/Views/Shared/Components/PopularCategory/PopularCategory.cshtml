@@ -1,0 +1,26 @@
+﻿@model Shop.Domain.ViewModels.Admin.Products.FilterProductCategoriesViewModel
+
+@if (Model.ProductCategories != null && Model.ProductCategories.Any())
+{
+
+    <div class="cat-blocks-container">
+        <div class="row">
+            @foreach (var category in Model.ProductCategories)
+            {
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a asp-area="" asp-controller="Product" asp-action="Products" asp-route-FilterByCategory="@category.UrlName" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="@(PathExtensions.CategoryOrgin +category.ImageName)" alt="@category.Title">
+                            </span>
+                        </figure>
+
+                        <h3 class="cat-block-title">@category.Title</h3><!-- End .cat-block-title -->
+                    </a>
+                </div>
+
+            }
+
+        </div>
+    </div>
+}

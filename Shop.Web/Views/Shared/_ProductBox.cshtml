@@ -1,0 +1,43 @@
+﻿@model Shop.Domain.ViewModels.Site.Products.ProductItemViewModel
+
+<div class="product product-2">
+    <figure class="product-media">
+        <a href="product.html">
+            <img src="@(PathExtensions.ProductOrgin +Model.ProductImageName)" alt="تصویر محصول" class="product-image">
+        </a>
+
+        <div class="product-action-vertical">
+            <a asp-area="User" asp-controller="Account" asp-action="AddUserFavorite" asp-route-productId="@Model.ProductId" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
+        </div><!-- End .product-action -->
+
+        <div class="product-action">
+            <a asp-controller="Product" asp-action="BuyProduct" asp-route-productId="@Model.ProductId" class="btn-product btn-cart" title="افزودن به سبد خرید">
+                <span>
+                    افزودن
+                    به
+                    سبد خرید
+                </span>
+            </a>
+        </div><!-- End .product-action -->
+    </figure><!-- End .product-media -->
+
+    <div class="product-body">
+        <div class="product-cat">
+            <a asp-area="" asp-controller="Product" asp-action="Products" asp-route-FilterByCategory="@Model.ProductCategory.UrlName">@Model.ProductCategory.Title</a>
+        </div><!-- End .product-cat -->
+        <h3 class="product-title">
+            <a asp-area="" asp-controller="Product" asp-action="ProductDetail" asp-route-productId="@Model.ProductId">
+                @Model.ProductName
+            </a>
+        </h3><!-- End .product-title -->
+        <div class="product-price">
+            @Model.Price.ToString("#,0 تومان")
+        </div><!-- End .product-price -->
+        <div class="ratings-container">
+            <div class="ratings">
+                <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+            </div><!-- End .ratings -->
+            <span class="ratings-text">@Model.CommentCount</span>
+        </div><!-- End .rating-container -->
+    </div><!-- End .product-body -->
+</div>
